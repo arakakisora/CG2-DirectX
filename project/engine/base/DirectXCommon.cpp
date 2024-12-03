@@ -346,9 +346,9 @@ void DirectXCommon::Begin()
 	//指定した色で画面全体をクリアする
 	float clearColor[] = { 0.1f,0.25f,0.5f,1.0f };//青っぽい色。RGBAの順
 	commandList->ClearRenderTargetView(rtvHandles[backBufferIndex], clearColor, 0, nullptr);
-	//描画用のDescript
-	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> descriptorHepes[] = { srvDescriptorHeap };
-	commandList->SetDescriptorHeaps(1, descriptorHepes->GetAddressOf());
+	
+	
+
 	//コマンドリストの内容を確定させる。すべてのコマンドを積んでからCliseすること
 	commandList->RSSetViewports(1, &viewport);
 	commandList->RSSetScissorRects(1, &scissorRect);
