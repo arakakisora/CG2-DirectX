@@ -41,8 +41,7 @@ private:
 	Object3D* object3D_=nullptr;
 	//playerのデータ
 	PayerData playerData;
-	//
-	Input* input_;
+
 
 
 

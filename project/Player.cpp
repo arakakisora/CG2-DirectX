@@ -1,7 +1,7 @@
 #include "Player.h"
 #include "ImGuiManager.h"
 #include <imgui.h>
-
+#include "Input.h"
 Player::Player()
 {
 }
@@ -28,6 +28,16 @@ void Player::Initialize(Object3D* Object3D)
 
 void Player::Update()
 {
+	if (Input::GetInstans()->PushKey(DIK_D))
+	{
+		playerData.position.x += playerData.Velocity.x;
+	}
+	if (Input::GetInstans()->PushKey(DIK_A))
+	{
+		playerData.position.x -= playerData.Velocity.x;
+	}
+
+
 	//playerの位置を更新
 	object3D_->SetTransform({ playerData.scale,playerData.rotation,playerData.position });
 	object3D_->Update();
